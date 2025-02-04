@@ -53,9 +53,40 @@ Pour chaque exercice :
 
 _Votre réponse pour l'exercice 1 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Le hook useDebounce est créé pour éviter les requêtes inutiles lorsque l'utilisateur tape. Le hook définit la debouncedValue uniquement après un délai de 1000ms qui représente le délai, il retourne cette debouncedValue qui sera utilisée par notre composant. Ce "debounce" est un moyen d'améliorer les performances et de ne rechercher que lorsque l'utilisateur a arrêté de taper pendant un certain temps.
 ```
+- Implementation de useDebounce :
+```javascript
+import { useState, useEffect } from 'react';
+
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+
+export default useDebounce;
+```
+- Test de useDebounce :
+```javascript
+const debouncedSerachTerm = useDebounce(searchTerm, 1000);
+
+  useEffect(()=>{
+    console.log(debouncedSerachTerm)
+  },[debouncedSerachTerm])
+```
+
+
 
 ### Exercice 2 : Context et Internationalisation
 #### Objectif : Gérer les préférences de langue

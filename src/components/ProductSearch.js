@@ -7,7 +7,12 @@ const ProductSearch = () => {
   // TODO: Exercice 2.1 - Utiliser le LanguageContext
   
   // TODO: Exercice 1.2 - Utiliser le hook useDebounce
-  
+  const debouncedSearchTerm = useDebounce(searchTerm, 500);
+    
+    useEffect(() => {
+        console.log('Recherche:', debouncedSearchTerm)
+    }, [debouncedSearchTerm])
+    
   return (
     <div className="mb-4">
       <input
