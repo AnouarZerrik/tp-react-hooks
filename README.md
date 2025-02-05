@@ -130,8 +130,20 @@ Difficultés rencontrées :
 
 _Votre réponse pour l'exercice 3 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Explication :
+   - Ce hook prend une key et une initialValue comme entrées.
+
+   - Il tente de récupérer la valeur du stockage local en utilisant la clé, en revenant à initialValue si elle n'est pas trouvée.
+
+   - useEffect est utilisé pour mettre à jour le localStorage chaque fois que storedValue change.
+
+3.1 Le hook useDebounce est déjà créé dans l'exercice 1.2.
+
+3.2 Le hook useLocalStorage est créé pour abstraire la logique de définition et d'obtention des données depuis le stockage local. Il utilise localStorage pour stocker et récupérer les données pour une key donnée et il utilise une initialValue lorsque la valeur n'est pas trouvée.
+
+Difficultés rencontrées :
+
+   * La partie la plus difficile a été de m'assurer que les valeurs sont correctement converties en chaînes et analysées dans le hook useLocalStorage.
 ```
 
 ### Exercice 4 : Gestion Asynchrone et Pagination
