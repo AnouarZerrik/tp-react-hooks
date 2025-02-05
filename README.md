@@ -97,9 +97,29 @@ const debouncedSerachTerm = useDebounce(searchTerm, 1000);
 
 _Votre réponse pour l'exercice 2 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+Explication :
+
+    - Nous avons ajouté une balise select avec les options fr et en à notre composant.
+    - Nous contrôlons la valeur sélectionnée à l'aide de l'état language.
+    - La langue sélectionnée est mise à jour à chaque changement du composant select.
+
+2.1 Le LanguageContext est créé pour partager l'état de la langue dans notre application. Cela nous permet de mettre en œuvre la fonctionnalité d'internationalisation dans tous les composants que nous souhaitons.
+
+2.2 Nous avons ajouté un élément select à l'intérieur de App.js pour permettre à l'utilisateur de changer la langue de l'application. Il utilise l'état language pour contrôler la valeur sélectionnée et setLanguage pour mettre à jour la langue à chaque changement.    
+
+Difficultés rencontrées :
+
+    La partie la plus difficile a été de comprendre l'ordre des composants afin de m'assurer que tous les composants ont accès au LanguageContext. J'ai corrigé cela en m'assurant que le fournisseur se trouve en haut de l'arborescence des composants.
 ```
+- Sélecteur de langue
+
+<img src="imgs/2_1.png" />
+
+- Sélecteur pendant le changement :
+   * Option de Francais
+<img src="imgs/2_2_1.png" /> 
+   * Option d'Englais
+<img src="imgs/2_2_2.png" /> 
 
 ### Exercice 3 : Hooks Personnalisés
 #### Objectif : Créer des hooks réutilisables
