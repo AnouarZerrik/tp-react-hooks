@@ -155,9 +155,22 @@ Difficultés rencontrées :
 
 _Votre réponse pour l'exercice 4 :_
 ```
-Expliquez votre solution ici
-[Ajoutez vos captures d'écran]
+4.1 Nous avons ajouté un bouton pour déclencher une nouvelle récupération des produits dans le composant ProductList. Nous avons créé une fonction reloadProducts dans le useProductSearch qui effectue une nouvelle récupération.
+
+4.2 Nous avons mis en œuvre la pagination en utilisant les états currentPage et totalPages. Nous avons également ajouté une logique aux boutons pour augmenter ou diminuer la page actuelle. La pagination est mise à jour à l'aide du hook useEffect.
+
+Difficultés rencontrées :
+
+La partie la plus difficile a été de calculer correctement le nombre total de pages et de mettre à jour le currentPage correctement sans effectuer d'appels infinis.
 ```
+* Bouton de rechargement
+
+<img src="imgs/4_2.png" />
+
+* Pagination
+
+<img src="imgs/4_1.png" />
+
 
 ## Rendu
 

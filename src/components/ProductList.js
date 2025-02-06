@@ -12,7 +12,7 @@ const ProductList = () => {
     loading, 
     error,
     reloadProducts,
-    page,
+    currentPage,
     TotalPages,
     nextPage,
     previousPage,
@@ -37,10 +37,7 @@ const ProductList = () => {
   return (
     <div>
       <div className="d-flex justify-content-end mb-3">
-        <button className={`btn ${isDarkTheme ? 'btn-outline-light' : 'btn-outline-dark'}`} onClick={() => {
-          console.log('click on refresh');
-          reloadProducts();
-        }}>
+        <button className={`btn ${isDarkTheme ? 'btn-outline-light' : 'btn-outline-dark'}`} onClick={reloadProducts}>
           {language === 'fr' ? "Rafraîchir" : "Refresh"}
         </button>
       </div>
@@ -78,7 +75,7 @@ const ProductList = () => {
           </li>
           <li className="page-item">
             <span className={`page-link ${isDarkTheme ? 'bg-dark text-light' : ''}`}>
-              {language === 'fr' ? 'Page ' : 'Page '}{page} {language === 'fr' ? 'sur' : 'of'} {TotalPages}
+              {language === 'fr' ? 'Page ' : 'Page '}{currentPage} {language === 'fr' ? 'sur' : 'of'} {TotalPages}
             </span>
           </li>
           <li className="page-item">
